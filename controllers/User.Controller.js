@@ -31,6 +31,7 @@ exports.signup = async (req, res) => {
                 });
         })
         .catch((err) => {
+            console.error(err);
             return res.status(404).json(err);
         });
 };
