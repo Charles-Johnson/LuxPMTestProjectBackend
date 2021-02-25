@@ -7,7 +7,9 @@ var UserSchema = new mongoose.Schema({
     createdAt: { type: Date, required: true, default: Date.now },
     updatedAt: { type: Date, required: true, default: Date.now },
     hash: { type: String, required: true },
-    salt: { type: String, required: true }
+    salt: { type: String, required: true },
+    firstname: {type: String, required: true},
+    lastname: {type: String, required: true}
 }, { discriminatorKey: 'role', toJSON: { getters: true } });
 
 UserSchema.methods.setPassword = function (password) {

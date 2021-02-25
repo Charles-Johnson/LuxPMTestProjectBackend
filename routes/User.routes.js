@@ -5,7 +5,9 @@ var VerifyToken = require('./middleware.js');
 module.exports = (app) => {
     app.post("/signup", [
         check('email').trim().escape(),
-        check('password').isLength({ min: 8 }).trim().escape()
+        check('password').isLength({ min: 8 }).trim().escape(),
+        check('firstname').trim().escape(),
+        check('lastname').trim().escape(),
     ], (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
