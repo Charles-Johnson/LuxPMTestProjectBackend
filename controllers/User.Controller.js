@@ -1,11 +1,7 @@
-const { body } = require('express-validator');
 var mongoose = require('mongoose'),
     passport = require('passport');
 const Response = require('./response');
 const User = mongoose.model('User');
-const Admin = mongoose.model('Admin');
-const Customer = mongoose.model('Customer');
-const Measurement = mongoose.model('Measurement');
 
 exports.signup = async (req, res) => {
     User.findOne({ email: req.body.email })
