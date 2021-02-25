@@ -8,6 +8,7 @@ module.exports = (app) => {
         check('password').isLength({ min: 8 }).trim().escape(),
         check('firstname').trim().escape(),
         check('lastname').trim().escape(),
+        check('phoneNumber').trim().escape(),
     ], (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
